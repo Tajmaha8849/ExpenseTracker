@@ -13,12 +13,12 @@ app = Flask(__name__)
 CORS(app)
 
 # JWT Configuration
-app.config['JWT_SECRET_KEY'] = 'yufu76b77r6btuggbjguyjuy'  # Change this in production!
+app.config['JWT_SECRET_KEY'] = os.getenv("JWT_SECRET_KEY")  # Change this in production!
 app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=1)
 jwt = JWTManager(app)
 
 # MongoDB Connection
-client = MongoClient('mongodb+srv://admin:ShubhamP@cluster0.0miowwk.mongodb.net/Better?retryWrites=true&w=majority&appName=Cluster0')
+client = MongoClient(os.getenv("MONGO_DB"))
 db = client['Better']
 users_collection = db['users']
 expenses_collection = db['expenses']
