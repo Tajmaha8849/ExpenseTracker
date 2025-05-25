@@ -18,7 +18,7 @@ app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(days=1)
 jwt = JWTManager(app)
 
 # MongoDB Connection
-client = MongoClient('mongodb+srv://admin:ShubhamP@cluster0.0miowwk.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
+client = MongoClient('mongodb+srv://admin:ShubhamP@cluster0.0miowwk.mongodb.net/Better?retryWrites=true&w=majority&appName=Cluster0')
 db = client['Better']
 users_collection = db['users']
 expenses_collection = db['expenses']
