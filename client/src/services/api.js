@@ -2,7 +2,8 @@ import axios from 'axios'
 
 // Set base URL for all requests
 const api = axios.create({
-  baseURL: 'http://localhost:5000', // Change in production
+  //baseURL: 'http://localhost:5000', // Change in production
+  baseURL: 'https://expensetracker-1-bwda.onrender.com', // Change in production
   headers: {
     'Content-Type': 'application/json'
   }
